@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a4a36" />
+  <meta name="description" content="Jawani Sambhal Yatra — bilingual concept website preview." />
+  <title>ਜਵਾਨੀ ਸੰਭਾਲ ਯਾਤਰਾ | Jawani Sambhal Yatra — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700;800&family=Noto+Sans+Gurmukhi:wght@400;500;600;700;800&family=Noto+Serif+Gurmukhi:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --forest:#0a4a36;
+      --forest-dark:#083628;
+      --forest-soft:#1f6f54;
+      --saffron:#e89a33;
+      --cream:#fbf6ea;
+      --paper:#f3eee0;
+      --ink:#173e30;
+      --muted:#6f7f74;
+      --outline:#d8d8cc;
+      --white:#ffffff;
+      --shadow:0 24px 50px -32px rgba(14,48,33,.36);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:'Source Sans 3','Noto Sans Gurmukhi',system-ui,sans-serif;line-height:1.5}
+    img{max-width:100%;display:block}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    a{text-decoration:none;color:inherit}
+    .pa{font-family:'Noto Sans Gurmukhi',sans-serif}
+    .pa-serif{font-family:'Noto Serif Gurmukhi',serif}
+    .wrap{width:min(1220px,calc(100% - 40px));margin:auto}
+    .demo-bar{background:#eeb55a;color:#254233;text-align:center;padding:7px 10px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--forest-dark),var(--forest));color:#fff;padding-bottom:36px}
+    .hero::before{content:'';position:absolute;inset:0;background:url('https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/b2a616c2-d6ca-44cb-ac2d-4be703917bbb.jpg') center/cover no-repeat;opacity:.17;mix-blend-mode:screen}
+    .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 72% 10%, rgba(255,214,131,.18), transparent 34%), linear-gradient(180deg, rgba(6,31,23,.1), rgba(6,31,23,.48));pointer-events:none}
+
+    .nav{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .brand-mark{width:58px;height:58px;border-radius:50%;overflow:hidden;background:#fff;border:3px solid var(--saffron);box-shadow:0 10px 24px rgba(0,0,0,.2);flex:none}
+    .brand-mark img{width:100%;height:100%;object-fit:cover}
+    .brand-copy{min-width:0}
+    .brand-copy .line1{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:#f5dca9}
+    .brand-copy .line2{font-size:14px;font-weight:800;color:#fff6df}
+    .hero-tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e8d1a2;font-weight:800;border:1px solid rgba(255,255,255,.18);padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.05);white-space:nowrap}
+
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:start;padding-top:12px}
+    .title-box{padding:8px 0 0}
+    .title-box .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#ecd39d;font-weight:800}
+    .title-box h1{margin:12px 0 2px;font:800 clamp(42px,5vw,68px)/1.28 'Noto Serif Gurmukhi',serif;color:#fff;text-shadow:0 8px 22px rgba(0,0,0,.18)}
+    .title-box .en-title{font:700 clamp(24px,2.4vw,34px)/1.2 Fraunces,serif;letter-spacing:.14em;color:#efb760;text-transform:uppercase}
+    .title-box .sub{margin:18px 0 0;color:#e7efe8;font-size:16px;max-width:700px}
+    .title-box .cta-row{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
+    .hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--saffron);color:#213d31;padding:13px 18px;border-radius:14px;font-weight:800;box-shadow:0 10px 25px rgba(0,0,0,.18)}
+    .hero-btn.secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18)}
+
+    .invite-card{background:rgba(248,243,232,.96);backdrop-filter:blur(4px);color:var(--ink);border-radius:28px;padding:20px;border:1px solid rgba(255,255,255,.28);box-shadow:var(--shadow)}
+    .invite-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+    .invite-head .mini-logo{width:50px;height:50px;border-radius:50%;overflow:hidden;background:#fff;border:1px solid #d9c6a6;flex:none}
+    .invite-head .mini-logo img{width:100%;height:100%;object-fit:cover}
+    .invite-head .t1{font:800 18px/1.45 'Noto Sans Gurmukhi';margin:0;color:#13452f}
+    .invite-head .t2{margin:2px 0 0;font:700 14px/1.2 Fraunces,serif;letter-spacing:.08em;color:#9c6225;text-transform:uppercase}
+    .invite-card p{margin:0 0 14px}
+    .invite-pa{font-family:'Noto Sans Gurmukhi';font-size:15px;line-height:1.72;font-weight:650}
+    .invite-en{font-size:13px;color:#66786e;line-height:1.58}
+
+    .portraits-strip{position:relative;z-index:3;margin-top:22px}
+    .portraits-shell{background:linear-gradient(180deg,#0a543b,#0a4331);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:16px;box-shadow:0 22px 55px -35px rgba(2,27,19,.75)}
+    .strip-head{display:grid;grid-template-columns:1.15fr 1.1fr .95fr;align-items:center;gap:12px;padding:2px 4px 16px;color:#fff3db}
+    .strip-head .s-left,.strip-head .s-right{font-size:12px;letter-spacing:.08em;font-weight:800;text-transform:uppercase}
+    .strip-head .s-center{text-align:center}
+    .strip-head .s-center .pa-serif{font-size:26px;line-height:1.35;font-weight:800;display:block}
+    .strip-head .s-center .en{font:700 14px/1.2 Fraunces,serif;letter-spacing:.18em;color:#ebb666;text-transform:uppercase}
+    .leader-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+    .leader-card{background:#f6ecd3;border-radius:18px;overflow:hidden;box-shadow:0 10px 20px rgba(0,0,0,.12)}
+    .leader-photo{height:148px;background:linear-gradient(145deg,#d9d0bd,#e8e5d7);overflow:hidden}
+    .leader-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+    .leader-meta{padding:10px 8px 12px;text-align:center}
+    .leader-meta strong{display:block;font-size:12.5px;line-height:1.3;color:#173e30}
+    .leader-meta span{display:block;font-size:9px;line-height:1.28;color:#6f796f;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+
+    .main{padding:44px 0 72px;background:linear-gradient(180deg,var(--cream),var(--paper))}
+    .content-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:28px;align-items:start}
+    .about{padding:4px 2px 0}
+    .sec-no{font-size:12px;letter-spacing:.18em;color:#b16b27;text-transform:uppercase;font-weight:800}
+    .sec-pa{margin:10px 0 2px;font:800 clamp(28px,3vw,40px)/1.42 'Noto Serif Gurmukhi',serif;color:#113d2e}
+    .sec-en{font:700 22px/1.2 Fraunces,serif;color:#c37d33;margin-bottom:18px}
+    .about .pa-copy{font-family:'Noto Sans Gurmukhi';font-size:18px;line-height:1.88;color:#1a4534;font-weight:650;margin:0 0 16px}
+    .about .en-copy{font-size:15px;line-height:1.72;color:#52685d;margin:0 0 18px}
+    .about-visual{margin-top:24px;border-radius:28px;overflow:hidden;position:relative;min-height:250px;background:linear-gradient(145deg,#bfd1bd,#f6ead0)}
+    .about-visual::before{content:'';position:absolute;inset:0;background:url('https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/0bbd94bb-b211-4f41-b29c-b86755d79047.jpg') center/cover no-repeat;opacity:.62}
+    .about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(10,74,54,.12) 60%,rgba(10,74,54,.2));}
+    .about-badge{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:10px;background:rgba(7,58,41,.9);color:#fff8ea;padding:12px 16px;border-radius:18px;font-weight:800;z-index:1;box-shadow:0 10px 20px rgba(0,0,0,.2)}
+    .about-badge img{width:34px;height:34px;border-radius:50%;background:#fff;padding:2px}
+
+    .form-card{background:#fbf8f0;border-radius:28px;border:1px solid #dddaca;box-shadow:var(--shadow);padding:26px;position:relative}
+    .form-card::before{content:'';position:absolute;inset:0 0 auto;height:7px;border-radius:28px 28px 0 0;background:linear-gradient(90deg,#e89a33 0 32%,#fff6e2 32% 68%,#0d6b47 68%)}
+    .form-title{margin:0 0 12px;font:800 23px/1.45 'Noto Sans Gurmukhi';color:#15402f}
+    .form-sub{margin:0 0 16px;font:700 13px/1.2 Fraunces,serif;color:#a76524;letter-spacing:.09em;text-transform:uppercase}
+    .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    label.field{display:block;min-width:0}
+    .field .label{display:block;margin-bottom:6px;color:#18402f;font:800 13px/1.4 'Noto Sans Gurmukhi'}
+    .field .label em{font-style:normal;font-family:'Source Sans 3';font-weight:600;font-size:11px;color:#6d8176}
+    .input{width:100%;height:48px;border-radius:12px;border:1px solid #d6d8cb;background:#fff;padding:0 14px;color:#163e30;font-size:14px;min-width:0}
+    .input:focus-visible{outline:2px solid #e6a448;outline-offset:2px;border-color:#d9a35b}
+    .phase-block{margin-top:18px}
+    .phase-pa{margin:0;color:#18402f;font:800 17px/1.5 'Noto Sans Gurmukhi'}
+    .phase-en{margin:2px 0 10px;color:#6d8176;font-size:13px}
+    .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .phase{display:flex;gap:10px;align-items:center;min-height:82px;padding:12px 12px;border:1px solid #d5d5c9;border-radius:14px;background:#fff;cursor:pointer}
+    .phase input{accent-color:#0d6b47;flex:none}
+    .phase:has(input:checked){border-color:#0d6b47;background:#ebf4eb;box-shadow:inset 0 0 0 1px #0d6b47}
+    .phase b{display:block;font-size:13px;color:#173f30}
+    .phase small{display:block;font-size:10.5px;color:#6c7a70;line-height:1.35}
+    .consent{display:flex;align-items:flex-start;gap:10px;margin:15px 0 14px;font-size:12px;color:#617368;line-height:1.5}
+    .consent input{margin-top:2px;accent-color:#0d6b47}
+    .submit{width:100%;height:52px;border:none;border-radius:14px;background:#0a573e;color:#fff;font:800 17px 'Noto Sans Gurmukhi';box-shadow:0 10px 22px rgba(0,0,0,.12)}
+    .submit:hover{background:#0d6b47}
+    .thankyou{margin-top:14px;padding:14px;border-radius:14px;border:1px solid #e2e3d5;background:#eef3e7}
+    .thankyou .pa{font-size:13px;font-weight:800;line-height:1.58}
+    .thankyou p{font-size:12px;color:#5f7267;margin:4px 0 0}
+    .tiny{margin-top:10px;font-size:11px;color:#75867b}
+    .error{font-size:12px;color:#a63636;min-height:16px;margin:8px 0 2px}
+    .success{display:none;margin-top:16px;padding:18px;border-radius:16px;border:1px solid #bbd5be;background:#e7f4e8}
+    .success h3{margin:0 0 7px;color:#0a6845}
+    .success .ref{font:bold 18px monospace;color:#9d5920}
+    .success button{margin-top:10px;border:none;border-radius:10px;padding:10px 14px;background:#0d5d42;color:#fff}
+
+    .value-strip{margin-top:32px;background:#efe8d8;border-top:1px solid #e0ddcf;border-bottom:1px solid #e0ddcf}
+    .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:22px 0}
+    .value{display:flex;gap:12px;align-items:center;padding:8px 10px}
+    .value-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#fff8e9;color:#cc8a2d;font-size:22px;border:1px solid #e2d4b1;flex:none}
+    .value strong{display:block;font:800 13px/1.4 'Noto Sans Gurmukhi';color:#173e30}
+    .value small{display:block;font-size:12px;color:#6f7d72}
+
+    .footer{padding:26px 0 36px;background:#f8f2e3;color:#5b6d63}
+    .footer-inner{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+    .footer-title{font:800 16px/1.5 'Noto Sans Gurmukhi';color:#17402f}
+    .footer p{margin:4px 0 0;font-size:13px;max-width:760px}
+
+    @media (max-width: 1100px){
+      .leader-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .content-grid,.hero-grid{grid-template-columns:1fr}
+      .title-box .sub{max-width:none}
+    }
+    @media (max-width: 820px){
+      .wrap{width:min(100% - 28px, 680px)}
+      .nav{align-items:flex-start;flex-direction:column}
+      .hero-tag{white-space:normal}
+      .strip-head{grid-template-columns:1fr;gap:6px;text-align:center}
+      .strip-head .s-left,.strip-head .s-right{text-align:center}
+      .leader-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .field-grid,.phase-grid,.value-grid{grid-template-columns:1fr}
+      .about .pa-copy{font-size:17px}
+      .sec-pa{font-size:32px}
+      .footer-inner{flex-direction:column}
+    }
+    @media (max-width: 520px){
+      .demo-bar{font-size:11px;padding:6px 8px}
+      .brand-mark{width:50px;height:50px}
+      .brand-copy .line2{font-size:12px}
+      .title-box h1{font-size:44px}
+      .title-box .en-title{font-size:22px;letter-spacing:.1em}
+      .invite-card,.form-card,.portraits-shell{padding:16px}
+      .leader-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .leader-photo{height:130px}
+      .leader-meta strong{font-size:12px}
+      .hero-btn{width:100%;justify-content:center}
+      .about-visual{min-height:220px}
+      .value{padding:4px 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">Design preview only · Interactive concept site</div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="brand-mark"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/d8a4acee-2d2d-470f-89e8-358c105ca7ed.png" alt="Congress logo" /></div>
+          <div class="brand-copy">
+            <div class="line1">Indian National Congress</div>
+            <div class="line2 pa" lang="pa">ਭਾਰਤੀ ਰਾਸ਼ਟਰੀ ਕਾਂਗਰਸ</div>
+          </div>
+        </div>
+        <div class="hero-tag">Preview concept · Version 03</div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="title-box">
+          <div class="eyebrow">Punjabi youth outreach journey</div>
+          <h1 class="pa-serif" lang="pa">ਜਵਾਨੀ ਸੰਭਾਲ ਯਾਤਰਾ</h1>
+          <div class="en-title">Jawani Sambhal Yatra</div>
+          <p class="sub">A public cycle Yatra led to meet people, listen directly, understand the roots of Punjab’s youth issues and build a stronger connection between the people and their representatives.</p>
+          <div class="cta-row">
+            <a class="hero-btn" href="#join">ਯਾਤਰਾ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ · Join the Yatra</a>
+            <a class="hero-btn secondary" href="#purpose">ਹੋਰ ਜਾਣੋ · Read purpose</a>
+          </div>
+        </div>
+
+        <aside class="invite-card">
+          <div class="invite-head">
+            <div class="mini-logo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/d8a4acee-2d2d-470f-89e8-358c105ca7ed.png" alt="Congress logo" /></div>
+            <div>
+              <h2 class="t1 pa" lang="pa">ਯਾਤਰਾ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਣ ਦਾ ਸੱਦਾ</h2>
+              <p class="t2">Invitation to join the Yatra</p>
+            </div>
+          </div>
+          <p class="invite-pa" lang="pa">ਜੇ ਤੁਸੀਂ ਇਸ ਯਾਤਰਾ ਦਾ ਹਿੱਸਾ ਬਣਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਜਾਂ ਆਪਣੀ ਕੋਈ ਸਮੱਸਿਆ, ਚਿੰਤਾ ਜਾਂ ਗਿਲਾ-ਸ਼ਿਕਵਾ ਚੰਨੀ ਜੀ ਅਤੇ ਕਾਂਗਰਸ ਪਾਰਟੀ ਤੱਕ ਪਹੁੰਚਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਹੇਠਾਂ ਦਿੱਤਾ ਫਾਰਮ ਭਰ ਕੇ ਸਾਡੇ ਨਾਲ ਜੁੜੋ।</p>
+          <p class="invite-en">If you want to be part of the Yatra, or wish to raise a problem, grievance or concern with Channi ji and the Congress Party, you can join by filling out the form below.</p>
+        </aside>
+      </div>
+
+      <section class="portraits-strip" aria-label="Leadership portraits">
+        <div class="portraits-shell">
+          <div class="strip-head">
+            <div class="s-left">Punjab &amp; youth outreach</div>
+            <div class="s-center">
+              <span class="pa-serif" lang="pa">ਜਵਾਨੀ ਸੰਭਾਲ ਯਾਤਰਾ</span>
+              <span class="en">Jawani Sambhal Yatra</span>
+            </div>
+            <div class="s-right">The voice of Punjab’s youth</div>
+          </div>
+          <div class="leader-grid">
+            <article class="leader-card"><div class="leader-photo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/91036283-adf9-4331-b523-e6a4e1987ec6.jpg" alt="Rahul Gandhi" /></div><div class="leader-meta"><strong class="pa" lang="pa">ਰਾਹੁਲ ਗਾਂਧੀ</strong><span>Rahul Gandhi</span></div></article>
+            <article class="leader-card"><div class="leader-photo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/97188f8c-ce9c-4e82-9bd0-4966d99cf371.jpg" alt="Priyanka Gandhi" /></div><div class="leader-meta"><strong class="pa" lang="pa">ਪ੍ਰਿਯੰਕਾ ਗਾਂਧੀ</strong><span>Priyanka Gandhi</span></div></article>
+            <article class="leader-card"><div class="leader-photo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/553eed3a-4b08-47aa-b382-76a41b1a679a.jpg" alt="Mallikarjun Kharge" /></div><div class="leader-meta"><strong class="pa" lang="pa">ਮੱਲਿਕਾਰਜੁਨ ਖੜਗੇ</strong><span>Mallikarjun Kharge</span></div></article>
+            <article class="leader-card"><div class="leader-photo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/1338c46f-2d4f-4a9a-9170-a9324338d4f4.jpg" alt="Sachin Pilot" /></div><div class="leader-meta"><strong class="pa" lang="pa">ਸਚਿਨ ਪਾਇਲਟ</strong><span>Sachin Pilot</span></div></article>
+            <article class="leader-card"><div class="leader-photo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/59f6d36b-2a83-4ee0-9d40-1dfeb8b58ed6.jpg" alt="Pargat Singh" /></div><div class="leader-meta"><strong class="pa" lang="pa">ਪਰਗਟ ਸਿੰਘ</strong><span>Pargat Singh</span></div></article>
+            <article class="leader-card"><div class="leader-photo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/1e4ca083-7a32-4122-920b-7b60b36f8954.jpg" alt="Charanjit Singh Channi" /></div><div class="leader-meta"><strong class="pa" lang="pa">ਚਰਨਜੀਤ ਸਿੰਘ ਚੰਨੀ</strong><span>Charanjit S. Channi</span></div></article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="wrap content-grid">
+      <section class="about" id="purpose">
+        <div class="sec-no">01 / Purpose &amp; core message</div>
+        <h2 class="sec-pa pa-serif" lang="pa">ਨੌਜਵਾਨਾਂ ਦੀ ਆਵਾਜ਼ ਸੁਣਨ, ਉਨ੍ਹਾਂ ਦੇ ਮੁੱਦੇ ਸਮਝਣ ਅਤੇ ਪੰਜਾਬ ਨੂੰ ਇਕਜੁੱਟ ਕਰਨ ਵੱਲ ਇਕ ਕਦਮ</h2>
+        <div class="sec-en">Listening to people, understanding the issues and uniting Punjab</div>
+        <p class="pa-copy" lang="pa">ਚੰਨੀ ਜੀ ਸਾਈਕਲ ਰਾਹੀਂ ਪੰਜਾਬ ਦੇ ਹਰ ਵਰਗ ਦੇ ਲੋਕਾਂ ਨਾਲ ਮਿਲਣ, ਉਨ੍ਹਾਂ ਦੀ ਗੱਲ ਸੁਣਨ ਅਤੇ ਨੌਜਵਾਨਾਂ ਦੇ ਮੁੱਦਿਆਂ ਨੂੰ ਜੜ੍ਹ ਤੋਂ ਸਮਝਣ ਲਈ ਇਹ ਯਾਤਰਾ ਕਰ ਰਹੇ ਹਨ। ਇਸ ਯਾਤਰਾ ਦਾ ਉਦੇਸ਼ ਨਸ਼ਿਆਂ, ਭ੍ਰਿਸ਼ਟਾਚਾਰ, ਬੇਰੁਜ਼ਗਾਰੀ ਅਤੇ ਹੋਰ ਵੱਡੀਆਂ ਸਮੱਸਿਆਵਾਂ ਦੇ ਮੂਲ ਕਾਰਣਾਂ ਨੂੰ ਸਮਝਣਾ ਅਤੇ ਲੋਕਾਂ ਅਤੇ ਉਨ੍ਹਾਂ ਦੇ ਨੁਮਾਇੰਦਿਆਂ ਵਿਚਕਾਰ ਦੀ ਦੂਰੀ ਘਟਾਉਣਾ ਹੈ।</p>
+        <p class="en-copy">Channi Ji will travel across Punjab on a cycle to meet people, listen to them and understand the roots of the problems facing Punjab’s youth. Through this Yatra, the Congress Party aims to address issues such as drug abuse, corruption, unemployment and other major concerns, while also bridging the gap between the public and their representatives.</p>
+        <div class="about-visual">
+          <div class="about-badge"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IY1HFG9h5b8iRkjsXq4uw7gjsE/d8a4acee-2d2d-470f-89e8-358c105ca7ed.png" alt="Congress logo" /> ਪੰਜਾਬ ਦੇ ਨੌਜਵਾਨਾਂ ਲਈ · For the youth of Punjab</div>
+        </div>
+      </section>
+
+      <section class="form-card" id="join" aria-labelledby="join-title">
+        <h2 class="form-title" id="join-title" lang="pa">ਯਾਤਰਾ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ / Join the Yatra</h2>
+        <div class="form-sub">Participation form · Design preview</div>
+
+        <form id="demo-form" novalidate>
+          <div class="field-grid">
+            <label class="field"><span class="label">ਨਾਮ / Name <em>Your name</em></span><input class="input" id="name" placeholder="Enter your name" type="text" /></label>
+            <label class="field"><span class="label">ਮੋਬਾਇਲ ਨੰਬਰ / Contact Number <em>Mobile number</em></span><input class="input" id="phone" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number" type="tel" /></label>
+            <label class="field"><span class="label">ਜ਼ਿਲ੍ਹਾ / District <em>Select district</em></span>
+              <select class="input" id="district" required>
+                <option value="">Select district</option>
+                <option>Amritsar</option><option>Barnala</option><option>Bathinda</option><option>Faridkot</option><option>Fatehgarh Sahib</option><option>Fazilka</option><option>Ferozepur</option><option>Gurdaspur</option><option>Hoshiarpur</option><option>Jalandhar</option><option>Kapurthala</option><option>Ludhiana</option><option>Malerkotla</option><option>Mansa</option><option>Moga</option><option>Muktsar</option><option>Pathankot</option><option>Patiala</option><option>Rupnagar</option><option>S.A.S. Nagar</option><option>Sangrur</option><option>Shahid Bhagat Singh Nagar</option><option>Tarn Taran</option>
+              </select>
+            </label>
+            <label class="field"><span class="label">ਹਲਕਾ / Halka <em>Select halka</em></span>
+              <select class="input" id="halka" required>
+                <option value="">Select halka</option>
+                <option>001 · Sujanpur</option><option>002 · Bhoa (SC)</option><option>003 · Pathankot</option><option>004 · Gurdaspur</option><option>005 · Dina Nagar (SC)</option><option>006 · Qadian</option><option>007 · Batala</option><option>008 · Sri Hargobindpur (SC)</option><option>009 · Fatehgarh Churian</option><option>010 · Dera Baba Nanak</option><option>011 · Ajnala</option><option>012 · Raja Sansi</option><option>013 · Majitha</option><option>014 · Jandiala (SC)</option><option>015 · Amritsar North</option><option>016 · Amritsar West (SC)</option><option>017 · Amritsar Central</option><option>018 · Amritsar East</option><option>019 · Amritsar South</option><option>020 · Attari (SC)</option><option>021 · Tarn Taran</option><option>022 · Khem Karan</option><option>023 · Patti</option><option>024 · Khadoor Sahib</option><option>025 · Baba Bakala (SC)</option><option>026 · Bholath</option><option>027 · Kapurthala</option><option>028 · Sultanpur Lodhi</option><option>029 · Phagwara (SC)</option><option>030 · Phillaur (SC)</option><option>031 · Nakodar</option><option>032 · Shahkot</option><option>033 · Kartarpur (SC)</option><option>034 · Jalandhar West (SC)</option><option>035 · Jalandhar Central</option><option>036 · Jalandhar North</option><option>037 · Jalandhar Cantonment</option><option>038 · Adampur (SC)</option><option>039 · Mukerian</option><option>040 · Dasuya</option><option>041 · Urmar</option><option>042 · Sham Chaurasi (SC)</option><option>043 · Hoshiarpur</option><option>044 · Chabbewal (SC)</option><option>045 · Garhshankar</option><option>046 · Banga (SC)</option><option>047 · Nawan Shahr</option><option>048 · Balachaur</option><option>049 · Anandpur Sahib</option><option>050 · Rupnagar</option><option>051 · Chamkaur Sahib (SC)</option><option>052 · Kharar</option><option>053 · S.A.S.Nagar</option><option>054 · Bassi Pathana (SC)</option><option>055 · Fatehgarh Sahib</option><option>056 · Amloh</option><option>057 · Khanna</option><option>058 · Samrala</option><option>059 · Sahnewal</option><option>060 · Ludhiana East</option><option>061 · Ludhiana South</option><option>062 · Atam Nagar</option><option>063 · Ludhiana Central</option><option>064 · Ludhiana West</option><option>065 · Ludhiana North</option><option>066 · Gill (SC)</option><option>067 · Payal (SC)</option><option>068 · Dakha</option><option>069 · Raikot (SC)</option><option>070 · Jagraon (SC)</option><option>071 · Nihal Singhwala (SC)</option><option>072 · Bhagha Purana</option><option>073 · Moga</option><option>074 · Dharamkot</option><option>075 · Zira</option><option>076 · Firozpur City</option><option>077 · Firozpur Rural (SC)</option><option>078 · Guru Har Sahai</option><option>079 · Jalalabad</option><option>080 · Fazilka</option><option>081 · Abohar</option><option>082 · Balluana (SC)</option><option>083 · Lambi</option><option>084 · Gidderbaha</option><option>085 · Malout (SC)</option><option>086 · Muktsar</option><option>087 · Faridkot</option><option>088 · Kotkapura</option><option>089 · Jaitu (SC)</option><option>090 · Rampura Phul</option><option>091 · Bhucho Mandi (SC)</option><option>092 · Bathinda Urban</option><option>093 · Bathinda Rural (SC)</option><option>094 · Talwandi Sabo</option><option>095 · Maur</option><option>096 · Mansa</option><option>097 · Sardulgarh</option><option>098 · Budhlada (SC)</option><option>099 · Lehra</option><option>100 · Dirba (SC)</option><option>101 · Sunam</option><option>102 · Bhadaur (SC)</option><option>103 · Barnala</option><option>104 · Mehal Kalan (SC)</option><option>105 · Malerkotla</option><option>106 · Amargarh</option><option>107 · Dhuri</option><option>108 · Sangrur</option><option>109 · Nabha (SC)</option><option>110 · Patiala Rural</option><option>111 · Rajpura</option><option>112 · Dera Bassi</option><option>113 · Ghanaur</option><option>114 · Sanour</option><option>115 · Patiala</option><option>116 · Samana</option><option>117 · Shutrana (SC)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="phase-block">
+            <p class="phase-pa" lang="pa">ਤੁਸੀਂ ਯਾਤਰਾ ਦੇ ਕਿਹੜੇ ਪੜਾਅ ਦਾ ਹਿੱਸਾ ਬਣਨਾ ਚਾਹੁੰਦੇ ਹੋ?</p>
+            <p class="phase-en">Which phase would you like to be a part of?</p>
+            <div class="phase-grid" role="radiogroup" aria-label="Choose Yatra phase">
+              <label class="phase"><input name="phase" type="radio" value="12–19 November 2026" required /><span><b lang="pa">12 ਨਵੰਬਰ – 19 ਨਵੰਬਰ</b><small>12 November – 19 November</small></span></label>
+              <label class="phase"><input name="phase" type="radio" value="26 November–4 December 2026" required /><span><b lang="pa">26 ਨਵੰਬਰ – 4 ਦਸੰਬਰ</b><small>26 November – 4 December</small></span></label>
+            </div>
+          </div>
+
+          <label class="consent"><input id="consent" type="checkbox" required /><span lang="pa">ਮੈਂ ਯਾਤਰਾ ਨਾਲ ਸੰਬੰਧਿਤ ਜਾਣਕਾਰੀ ਲਈ ਸੰਪਰਕ ਕਰਨ ਦੀ ਸਹਿਮਤੀ ਦਿੰਦਾ/ਦਿੰਦੀ ਹਾਂ। <span style="color:#7b867d">/ I consent to being contacted regarding Yatra participation in the future live version.</span></span></label>
+          <div class="error" id="form-error" role="alert" aria-live="polite"></div>
+          <button class="submit" type="submit">ਭੇਜੋ / SUBMIT</button>
+          <div class="thankyou"><div class="pa" lang="pa">ਸਾਡੇ ਅੰਦੋਲਨ ਦਾ ਹਿੱਸਾ ਬਣਨ ਅਤੇ ਸਹਿਯੋਗ ਦੇਣ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ। ਆਓ ਇਕੱਠੇ ਮਿਲ ਕੇ ਇੱਕ ਬਿਹਤਰ, ਸ਼ਾਂਤਮਈ ਅਤੇ ਖੁਸ਼ਹਾਲ ਪੰਜਾਬ ਬਣਾਈਏ।</div><p>Thank you for showing support and being part of our movement. Let us together create a better, peaceful and prosperous Punjab.</p></div>
+          <p class="tiny">Demo only. The form does not send or store your details. Use fictional information for review.</p>
+          <button id="test-fill" type="button" style="background:none;border:none;color:#6f8074;text-decoration:underline;font-size:11px;padding:0">Fill fictional test details</button>
+        </form>
+
+        <div class="success" id="success" role="status" aria-live="polite">
+          <h3 lang="pa">ਤੁਹਾਡਾ ਧੰਨਵਾਦ! · Thank you!</h3>
+          <p>This was a successful <strong>design-only test</strong>. No information was transmitted or collected.</p>
+          <p>Demo reference: <span class="ref" id="test-ref"></span></p>
+          <button id="reset" type="button">ਨਵੀਂ ਐਂਟਰੀ / Try another</button>
+        </div>
+      </section>
+    </div>
+
+    <section class="value-strip">
+      <div class="wrap value-grid">
+        <div class="value"><span class="value-icon">◎</span><div><strong class="pa" lang="pa">01 / ਲੋਕਾਂ ਨਾਲ ਮਿਲਣਾ</strong><small>Meet &amp; interact</small></div></div>
+        <div class="value"><span class="value-icon">◇</span><div><strong class="pa" lang="pa">02 / ਸਮੱਸਿਆਵਾਂ ਸਮਝਣਾ</strong><small>Understand the issues</small></div></div>
+        <div class="value"><span class="value-icon">❦</span><div><strong class="pa" lang="pa">03 / ਹੱਲ ਵੱਲ ਕਦਮ</strong><small>Work towards solutions</small></div></div>
+        <div class="value"><span class="value-icon">✦</span><div><strong class="pa" lang="pa">04 / ਪੰਜਾਬ ਨੂੰ ਜੋੜਨਾ</strong><small>Unite Punjab</small></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <div class="footer-title pa" lang="pa">ਜਵਾਨੀ ਸੰਭਾਲ ਯਾਤਰਾ · JAWANI SAMBHAL YATRA</div>
+        <p>Interactive visual proposal · Not a live signup portal · Official photographs, legal text and final approvals to be replaced before public release.</p>
+      </div>
+      <div><p>Concept preview only · Congress logo and portraits used here as design placeholders.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const form = document.getElementById('demo-form');
+      const error = document.getElementById('form-error');
+      const success = document.getElementById('success');
+      const fill = document.getElementById('test-fill');
+      const reset = document.getElementById('reset');
+
+      fill.addEventListener('click', () => {
+        document.getElementById('name').value = 'Demo Visitor';
+        document.getElementById('phone').value = '9876543210';
+        document.getElementById('district').value = 'Amritsar';
+        document.getElementById('halka').selectedIndex = 1;
+        document.querySelector('input[name="phase"][value="12–19 November 2026"]').checked = true;
+        document.getElementById('consent').checked = true;
+        error.textContent = '';
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        error.textContent = '';
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const district = document.getElementById('district').value;
+        const halka = document.getElementById('halka').value;
+        const phase = form.querySelector('input[name="phase"]:checked');
+        const consent = document.getElementById('consent').checked;
+
+        let issue = '';
+        if (name.length < 2) issue = 'Please enter a name / ਕਿਰਪਾ ਕਰਕੇ ਨਾਮ ਲਿਖੋ।';
+        else if (!/^[6-9][0-9]{9}$/.test(phone)) issue = 'Please enter a valid 10-digit mobile number / ਸਹੀ ਮੋਬਾਈਲ ਨੰਬਰ ਲਿਖੋ।';
+        else if (!district) issue = 'Please select a district / ਜ਼ਿਲ੍ਹਾ ਚੁਣੋ।';
+        else if (!halka) issue = 'Please select a constituency / ਹਲਕਾ ਚੁਣੋ।';
+        else if (!phase) issue = 'Please choose a Yatra phase / ਪੜਾਅ ਚੁਣੋ।';
+        else if (!consent) issue = 'Please confirm consent / ਸਹਿਮਤੀ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ।';
+
+        if (issue) {
+          error.textContent = issue;
+          return;
+        }
+
+        document.getElementById('test-ref').textContent = 'TEST-JSY-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+        form.style.display = 'none';
+        success.style.display = 'block';
+        success.scrollIntoView({behavior:'smooth', block:'center'});
+      });
+
+      reset.addEventListener('click', () => {
+        form.reset();
+        form.style.display = '';
+        success.style.display = 'none';
+        error.textContent = '';
+        document.getElementById('join').scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    })();
+  </script>
+</body>
+</html>
